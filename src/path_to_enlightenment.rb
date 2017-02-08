@@ -1,3 +1,5 @@
+
+
 # The path to Ruby Enlightenment starts with the following:
 
 $LOAD_PATH << File.dirname(__FILE__)
@@ -7,6 +9,7 @@ require 'about_nil'
 require 'about_objects'
 require 'about_equality_objects'
 require 'about_arrays'
+require 'about_arrays_special_case'
 require 'about_array_assignment'
 require 'about_hashes'
 require 'about_strings'
