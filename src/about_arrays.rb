@@ -44,6 +44,33 @@ class AboutArrays < Neo::Koan
     assert_equal __(nil), array[5,0]
   end
 
+  def test_different_methods_to_return_values_in_an_array
+    array = [:peanut, :butter, :and, :jelly]
+
+    assert_equal __([:peanut]), array[0,1]
+    assert_equal __(:peanut), array[0]
+    assert_equal __([]), array[4,0]
+    assert_equal __(nil), array[4]
+    assert_equal __([]), array[4,2]
+    assert_equal __([]), array[3,0]
+    assert_equal __([:jelly]), array[3,1]
+  end
+
+  # TO THINK ABOUT IT
+
+  # When we retrieve the character placed in an exact position in an array, the
+  # Index works as usual. But when we call the method [] to slice
+  # (array[start,interval length]), the coordenates of start don't
+  # work as the usual Index, it separates each part of the array, including
+  # the brackets.
+  # So, if we requested array[4,0], we would still be in the array (the bracket
+  # position) and it would return an empty array ('[]').
+
+  # Index in an array       0   1   2   3   4
+  # Array                 [ 1 , 2 , 3 , 4 ]
+  # Range    [(Start ind  0   1   2   3   4   5...),   interval length]
+
+
   def test_arrays_and_ranges
     assert_equal __(Range), (1..5).class
     assert_not_equal [1,2,3,4,5], (1..5) # __
