@@ -44,6 +44,18 @@ class AboutArrays < Neo::Koan
     assert_equal __, array[5,0]
   end
 
+  def test_different_methods_to_return_values_in_an_array
+    array = [:peanut, :butter, :and, :jelly]
+
+    assert_equal __, array[0,1]
+    assert_equal __, array[0]
+    assert_equal __, array[4,0]
+    assert_equal __, array[4]
+    assert_equal __, array[4,2]
+    assert_equal __, array[3,0]
+    assert_equal __, array[3,1]
+  end
+
   def test_arrays_and_ranges
     assert_equal __, (1..5).class
     assert_not_equal [1,2,3,4,5], (1..5)
